@@ -38,3 +38,10 @@ build/
 
 # Transcripciones crudas de clases (solo locales, no se publican)
 docs/transcripciones/
+
+# Archivos temporales de Office (documento abierto)
+~$*
+
+# Supabase CLI
+supabase/.temp/
+supabase/.branches/

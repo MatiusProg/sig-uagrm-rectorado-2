@@ -58,21 +58,29 @@ Enunciado completo: [`docs/enunciado-proyecto-sig-2026.pdf`](docs/enunciado-proy
 
 > En clase el ingeniero usa **ActualMap** (Windows) y **AspMap** (web), de VDS Technologies, con Visual Studio y VB.NET. Ver [`docs/notas-clases-y-sorteo.md`](docs/notas-clases-y-sorteo.md).
 
-## Estructura del repositorio
+## Arquitectura y estructura
+
+Ver [`docs/arquitectura.md`](docs/arquitectura.md): stack, ambientes dev/prod, CI/CD y estructura de carpetas.
 
 ```
-├── arcgis/      # Documentos de mapa (.mxd), layouts y exportaciones
-├── bd/          # Scripts SQL (esquema, carga, consultas)
-├── datos/
-│   ├── gps/     # Levantamientos GPS crudos (GPX, CSV, KML)
-│   └── shp/     # Capas procesadas (shapefiles / geodatabase)
-├── docs/        # Enunciado, informes, notas de clase
-└── web/         # Aplicación web
+├── .github/       # CI/CD (GitHub Actions)
+├── arcgis/        # .mxd y exportaciones del plano
+├── datos/         # gps/ (crudo) y shp/ (procesado)
+├── docs/          # enunciado, notas, arquitectura
+├── scripts/etl/   # carga de shapefiles a Supabase
+├── supabase/      # migraciones de la base de datos
+└── web/           # app React + Vite + TS
 ```
 
 ## Cómo colaborar
 
-1. Clonar: `git clone <url-del-repo>`
-2. Antes de trabajar: `git pull`
-3. Commits pequeños y descriptivos: `git add . && git commit -m "Agrega puntos GPS de planta baja" && git push`
-4. **No** subir archivos `.lock` de ArcGIS ni videos o audios pesados. El `.gitignore` ya los excluye.
+Lee [`CONTRIBUTING.md`](CONTRIBUTING.md). En resumen: se trabaja en ramas `feat/...`, se abre un Pull Request a `develop` y, para producción, de `develop` a `main`.
+
+Para correr la web en local:
+
+```bash
+cd web
+cp .env.example .env.local   # completar con los datos de Supabase dev
+npm install
+npm run dev
+```
