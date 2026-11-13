@@ -1,0 +1,40 @@
+# Media pesada (grabaciones de clase, audios)
+*.mp4
+*.m4a
+*.mp3
+*.wav
+*.mov
+
+# ArcGIS: locks y temporales
+*.lock
+*.sr.lock
+*.ldb
+*.mxd.bak
+*.xml.bak
+*.tmp
+*.gdb/*.lock
+Thumbs.db
+desktop.ini
+
+# Python / Node
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+dist/
+build/
+
+# Entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Editores / SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# Transcripciones crudas de clases (solo locales, no se publican)
+docs/transcripciones/
