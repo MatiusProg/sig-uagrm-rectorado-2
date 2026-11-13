@@ -41,7 +41,9 @@
 - `CLOUDFLARE_API_TOKEN`: Cloudflare → My Profile → API Tokens, con la plantilla *Edit Cloudflare Workers* o un permiso *Pages: Edit*.
 - `CLOUDFLARE_ACCOUNT_ID`.
 
-**Variable del repositorio:** `CF_PAGES_PROJECT`, el nombre del proyecto de Cloudflare Pages.
+**Variables del repositorio:**
+- `CF_PAGES_PROJECT`: el nombre del proyecto de Cloudflare Pages.
+- `SUPABASE_URL_DEV`, `SUPABASE_ANON_KEY_DEV`, `SUPABASE_URL_PROD` y `SUPABASE_ANON_KEY_PROD`: los usa el keep-alive.
 
 **Por ambiente (`dev` y `prod`):**
 - Secret `SUPABASE_DB_PASSWORD`.

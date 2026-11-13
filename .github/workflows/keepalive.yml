@@ -1,5 +1,7 @@
 # Keep-alive: el plan gratis de Supabase pausa un proyecto tras ~7 días sin actividad.
 # Cada 3 días se llama a la función public.ping() de dev y de prod.
+# Usa variables del REPOSITORIO (no de los ambientes), porque el cron corre desde main
+# y el ambiente "dev" solo admite despliegues desde develop.
 # Nota: GitHub desactiva los cron de repos públicos tras 60 días sin commits;
 # si el repo queda quieto (p. ej. en vacaciones), reactivarlo en la pestaña Actions.
 name: Keep-alive Supabase
@@ -14,14 +16,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        env: [dev, prod]
+        include:
+          - env: dev
+            url_var: SUPABASE_URL_DEV
+            key_var: SUPABASE_ANON_KEY_DEV
+          - env: prod
+            url_var: SUPABASE_URL_PROD
+            key_var: SUPABASE_ANON_KEY_PROD
+    name: ping ${{ matrix.env }}
     runs-on: ubuntu-latest
-    environment: ${{ matrix.env }}
     steps:
       - name: Llamar a public.ping()
         env:
-          URL: ${{ vars.VITE_SUPABASE_URL }}
-          KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+          URL: ${{ vars[matrix.url_var] }}
+          KEY: ${{ vars[matrix.key_var] }}
         run: |
           if [ -z "$URL" ] || [ -z "$KEY" ]; then
             echo "::warning::Ambiente ${{ matrix.env }} sin configurar; nada que mantener vivo."
@@ -29,3 +37,4 @@ jobs:
           fi
           curl --fail-with-body -sS -X POST "$URL/rest/v1/rpc/ping" \
             -H "apikey: $KEY" -H "Authorization: Bearer $KEY" -H "Content-Type: application/json" -d '{}'
+          echo
