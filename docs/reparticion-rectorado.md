@@ -1,6 +1,6 @@
 # Repartición de las Oficinas Administrativas del Rectorado (grupos 1, 2 y 3)
 
-> **Estado:** propuesta del grupo Rectorado (2). Falta acordarla con los grupos (1) y (3).
+> **Estado:** acordada. Los otros grupos la recibieron sin objeciones (19-11-2026).
 > **Fuente:** https://www.uagrm.edu.bo/unidades-administrativas/rectorado y las páginas de cada unidad (consultadas el 13-11-2026). La web oficial **no indica la ubicación de varias unidades**: hay que verificarla en campo.
 
 ## Unidades que dependen del Rectorado (según la web oficial)
