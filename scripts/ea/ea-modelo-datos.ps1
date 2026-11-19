@@ -4,7 +4,7 @@
     [string]$Modelo  = (Join-Path $PSScriptRoot '..\..\docs\diagramas\SIG-UAGRM.eapx'),
     # El esquema real, volcado de la base con scripts/ea/esquema.sql.
     [string]$Esquema = (Join-Path $PSScriptRoot '..\..\docs\diagramas\esquema.json'),
-    [string]$Png     = (Join-Path $PSScriptRoot '..\..\docs\diagramas\png\Modelo de datos - SIG UAGRM.png'),
+    [string]$Png     = (Join-Path $PSScriptRoot '..\..\docs\diagramas\png\Modelo de Dominio - Base de datos SIG UAGRM.png'),
     # Si crear EA por COM falla (CO_E_SERVER_EXEC_FAILURE), abrir EA SIN proyecto y usar esto.
     [switch]$UsarEAAbierto
 )
@@ -27,6 +27,8 @@
 # grupo_id va como columna FK en toda tabla de datos, pero la LÍNEA hacia
 # GRUPO no se dibuja (serían 11 líneas cruzando el diagrama). La nota del
 # diagrama lo explica.
+#
+# OJO: -Rehacer borra el paquete y con él el acomodo hecho a mano en EA.
 #
 # EA tiene que estar CERRADO (salvo con -UsarEAAbierto): si está abierto, su
 # copia en memoria pisa lo que escribe el script, sin error.

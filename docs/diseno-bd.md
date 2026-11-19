@@ -1,7 +1,7 @@
 # Modelo de datos común — SIG UAGRM 2026-2
 
 > **Propuesta del grupo Rectorado (2)** para los 22 grupos del proyecto de SIG (INF442-SA).
-> **Estado:** cerrada el 19-11-2026, tabla por tabla. El SQL completo es [`supabase/migrations/20261119000000_modelo_datos.sql`](../supabase/migrations/20261119000000_modelo_datos.sql) y se probó en Supabase (PostgreSQL 17 + PostGIS 3.3 + pgRouting 3.4).
+> **Versión 1.0 (19-11-2026).** Se cerró tabla por tabla. El SQL completo es [`supabase/migrations/20261119000000_modelo_datos.sql`](../supabase/migrations/20261119000000_modelo_datos.sql) y se probó en Supabase (PostgreSQL 17 + PostGIS 3.3 + pgRouting 3.4).
 
 ## Para qué sirve
 
@@ -11,7 +11,7 @@ El ingeniero pidió que los 22 grupos puedan integrarse y sugirió un esquema co
 2. Todos usan **las mismas tablas, los mismos nombres y las mismas convenciones de código**. Para eso alcanza con copiar el SQL en su Supabase (o usarlo de guía en otra base PostgreSQL/PostGIS) y cargar sus shapefiles con los campos de la [plantilla](#plantilla-de-campos-para-arcmap).
 3. Si algún día se juntan los datos (por ejemplo, si la DTIC publica la app), se cargan los 22 aportes en una sola base **sin choques**: cada fila tiene un `codigo` único y legible y un `grupo_id` que dice quién la levantó.
 
-![Modelo de datos](diagramas/png/Modelo%20de%20datos%20-%20SIG%20UAGRM.png)
+![Modelo de datos](diagramas/png/Modelo%20de%20Dominio%20-%20Base%20de%20datos%20SIG%20UAGRM.png)
 
 *Diagrama generado en Enterprise Architect a partir de la base real con [`scripts/ea/ea-modelo-datos.ps1`](../scripts/ea/ea-modelo-datos.ps1). El modelo está en `docs/diagramas/SIG-UAGRM.eapx`.*
 
@@ -307,12 +307,37 @@ Los shapefiles solo aceptan nombres de campo de **hasta 10 caracteres**. En ArcM
 
 `SEDE` se puede dejar vacío cuando hay `EDIFICIO`: la base lo completa.
 
-## Cómo adoptarlo en otro grupo
+## Tecnología recomendada
 
-1. Crear un proyecto en Supabase (gratis) y, en el **SQL Editor**, ejecutar primero `create extension if not exists postgis with schema extensions;` y después el archivo [`20261119000000_modelo_datos.sql`](../supabase/migrations/20261119000000_modelo_datos.sql) completo.
-2. Digitalizar en ArcMap con los campos de la plantilla y las convenciones de `codigo`.
-3. Poner su número de grupo en `GRUPO`.
-4. Si encuentran algo que el modelo no cubre, avisar al grupo Rectorado (2) antes de agregar columnas, para que el cambio sirva a todos.
+El ingeniero prefiere que los 22 grupos usen la misma tecnología, para poder integrar. Esta es la que usa el grupo Rectorado (2). **Lo único imprescindible para integrar es la base de datos**: si un grupo usa otro lenguaje para su app, igual puede respetar el modelo.
+
+| Parte | Tecnología | Por qué |
+|---|---|---|
+| Levantamiento en campo | GPS del celular con **SW Maps** (exporta KML o Shapefile) | Gratis y guarda en WGS84 |
+| Digitalización y plano | **ArcGIS Desktop 10.8 (ArcMap)** | Es el de la materia: leyenda, áreas y plano final |
+| Base de datos | **PostgreSQL + PostGIS en Supabase** (plan gratis) | Base espacial en la nube, con API, inicio de sesión y almacenamiento de fotos incluidos |
+| Rutas (punto 22) | **pgRouting** | Viene incluido en Supabase |
+| Aplicación web | **React + Vite + TypeScript**, instalable en el celular (PWA) | Una sola app para PC y celular, con acceso al GPS y la brújula (punto 21) |
+| Mapa en la web | **Leaflet** o **MapLibre GL** | Libres y gratis. Leen los datos de Supabase en GeoJSON |
+| Publicación | **Cloudflare Pages** (o Vercel / Netlify) | Gratis, con HTTPS (el GPS del celular lo exige) |
+| Código | **GitHub** | Versiones y trabajo en equipo |
+
+## Cómo trabajar cada grupo, paso a paso
+
+1. **Delimitar lo que les toca.** Listar las unidades y los lugares de su punto. Si aparece algo que no está en la lista, lo levanta el grupo al que le toca el edificio donde está, y avisa a los demás.
+2. **Levantar en campo.** Con el GPS en WGS84, tomar un punto por lugar (en la puerta), la foto de la puerta y la de la fachada, y la ficha: nombre, unidad, responsable, piso, referencia para encontrarlo, horario, teléfono y servicios.
+3. **Digitalizar en ArcMap** con los nombres de campo de la plantilla, en GCS_WGS_1984, con las convenciones de `codigo` y su número en `GRUPO`. Los senderos, con las tres reglas de la red.
+4. **Crear su base:** un proyecto propio en Supabase. En el **SQL Editor**, ejecutar primero `create extension if not exists postgis with schema extensions;` y después el SQL del modelo completo.
+5. **Cargar los datos:** subir los shapefiles a una tabla de paso (por ejemplo con QGIS o con `ogr2ogr` de GDAL) y pasarlos a las tablas del modelo convirtiendo los códigos en ids.
+6. **Hacer su app** leyendo las vistas y funciones del modelo (`v_ambiente`, `v_leyenda`, `buscar`, `ruta`) con la librería `supabase-js`.
+7. **Cuidar las claves:** la *anon key* de Supabase es pública por diseño; la contraseña de la base y la clave *service_role* **nunca** se comparten ni se suben a GitHub. En *Authentication* hay que **desactivar el registro público**: si no, cualquiera podría crearse una cuenta y modificar los datos.
+
+## Coordinación entre grupos
+
+- **El modelo es común; cada app es de su grupo.** Nadie necesita acceso al repositorio ni a la base de otro grupo.
+- **Para intercambiar datos** (por ejemplo, entre grupos que comparten un edificio), se pasan **shapefiles o CSV con los campos de la plantilla**. Nunca contraseñas ni claves. Como cada fila lleva su `grupo_id`, el mérito queda siempre de quien la levantó.
+- **Cambios al modelo:** si a un grupo le falta algo, que lo proponga al grupo Rectorado (2) antes de agregar columnas. Si el cambio sirve a todos, sale una versión nueva de este documento, y así nadie queda con un modelo distinto.
+- **Capas base:** cuando estén listos, el grupo Rectorado (2) compartirá sus polígonos de sedes y edificios como capa base opcional. Quien prefiera dibujar los suyos, que use las mismas convenciones de `codigo`.
 
 ## Pendiente de verificar en campo
 
