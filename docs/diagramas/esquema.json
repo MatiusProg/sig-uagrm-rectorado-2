@@ -1,0 +1,1448 @@
+[
+    {
+        "tabla": "ambiente",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "alias",
+                "nulo": false,
+                "tipo": "TEXT[]",
+                "unico": false
+            },
+            {
+                "fk": "tipo_ambiente",
+                "pk": false,
+                "col": "tipo_ambiente_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": "unidad",
+                "pk": false,
+                "col": "unidad_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "edificio",
+                "pk": false,
+                "col": "edificio_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "sede",
+                "pk": false,
+                "col": "sede_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "piso",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "referencia",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "encargado",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "telefono",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "horario",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "servicios",
+                "nulo": false,
+                "tipo": "TEXT[]",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "verificado_en",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": false,
+                "tipo": "GEOMETRY(POINT,4326)",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "area",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": "tipo_area",
+                "pk": false,
+                "col": "tipo_area_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": "sede",
+                "pk": false,
+                "col": "sede_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": "unidad",
+                "pk": false,
+                "col": "unidad_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "material",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "capacidad",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "acceso",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nota",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "verificado_en",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": false,
+                "tipo": "GEOMETRY(MULTIPOLYGON,4326)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "area_m2",
+                "nulo": true,
+                "tipo": "NUMERIC(12,1)",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "edificio",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "alias",
+                "nulo": false,
+                "tipo": "TEXT[]",
+                "unico": false
+            },
+            {
+                "fk": "sede",
+                "pk": false,
+                "col": "sede_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "uso",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "pisos",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "ascensor",
+                "nulo": true,
+                "tipo": "BOOLEAN",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": true,
+                "tipo": "GEOMETRY(MULTIPOLYGON,4326)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "centro",
+                "nulo": true,
+                "tipo": "GEOMETRY(POINT,4326)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "area_m2",
+                "nulo": true,
+                "tipo": "NUMERIC(12,1)",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "foto",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": "edificio",
+                "pk": false,
+                "col": "edificio_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "ambiente",
+                "pk": false,
+                "col": "ambiente_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "punto_interes",
+                "pk": false,
+                "col": "punto_interes_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "area",
+                "pk": false,
+                "col": "area_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "ruta",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "tipo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "principal",
+                "nulo": false,
+                "tipo": "BOOLEAN",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "tomada_en",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "grupo",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "tema",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "contacto",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "punto_interes",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": "tipo_punto",
+                "pk": false,
+                "col": "tipo_punto_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": "edificio",
+                "pk": false,
+                "col": "edificio_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "sede",
+                "pk": false,
+                "col": "sede_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "piso",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "accesible",
+                "nulo": true,
+                "tipo": "BOOLEAN",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nota",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "extintor_agente",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "extintor_kg",
+                "nulo": true,
+                "tipo": "NUMERIC(4,1)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "extintor_vence",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "verificado_en",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": false,
+                "tipo": "GEOMETRY(POINT,4326)",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "sede",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "tipo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "municipio",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "direccion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": true,
+                "tipo": "GEOMETRY(MULTIPOLYGON,4326)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "area_m2",
+                "nulo": true,
+                "tipo": "NUMERIC(12,1)",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "tipo_ambiente",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "categoria",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "color",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "icono",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "orden",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "tipo_area",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "categoria",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "color",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "icono",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "orden",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "tipo_punto",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "categoria",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "color",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "icono",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "orden",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "tipo_via",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "categoria",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "color",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "icono",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "orden",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "unidad",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "sigla",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "alias",
+                "nulo": false,
+                "tipo": "TEXT[]",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "tipo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": "unidad",
+                "pk": false,
+                "col": "padre_id",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "responsable",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "cargo_responsable",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "descripcion",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "servicios",
+                "nulo": false,
+                "tipo": "TEXT[]",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "correo",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "web",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "via",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "codigo",
+                "nulo": false,
+                "tipo": "TEXT",
+                "unico": true
+            },
+            {
+                "fk": "tipo_via",
+                "pk": false,
+                "col": "tipo_via_id",
+                "nulo": false,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "nombre",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": "sede",
+                "pk": false,
+                "col": "sede_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "superficie",
+                "nulo": true,
+                "tipo": "TEXT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "techado",
+                "nulo": true,
+                "tipo": "BOOLEAN",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "accesible",
+                "nulo": true,
+                "tipo": "BOOLEAN",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "verificado_en",
+                "nulo": true,
+                "tipo": "DATE",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": false,
+                "tipo": "GEOMETRY(LINESTRING,4326)",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "longitud_m",
+                "nulo": true,
+                "tipo": "NUMERIC(10,1)",
+                "unico": false
+            },
+            {
+                "fk": "via_nodo",
+                "pk": false,
+                "col": "origen",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "via_nodo",
+                "pk": false,
+                "col": "destino",
+                "nulo": true,
+                "tipo": "INTEGER",
+                "unico": false
+            },
+            {
+                "fk": "grupo",
+                "pk": false,
+                "col": "grupo_id",
+                "nulo": true,
+                "tipo": "SMALLINT",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "creado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "actualizado_en",
+                "nulo": false,
+                "tipo": "TIMESTAMPTZ",
+                "unico": false
+            }
+        ]
+    },
+    {
+        "tabla": "via_nodo",
+        "columnas": [
+            {
+                "fk": null,
+                "pk": true,
+                "col": "id",
+                "nulo": false,
+                "tipo": "INTEGER",
+                "unico": true
+            },
+            {
+                "fk": null,
+                "pk": false,
+                "col": "geom",
+                "nulo": false,
+                "tipo": "GEOMETRY(POINT,4326)",
+                "unico": true
+            }
+        ]
+    }
+]

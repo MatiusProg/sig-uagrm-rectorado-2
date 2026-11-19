@@ -12,3 +12,5 @@
 *.sbx  binary
 *.mxd  binary
 *.lyr  binary
+# Enterprise Architect
+*.eapx binary
