@@ -1,6 +1,6 @@
 # Fichas de oficinas
 
-`fichas-oficinas.csv` es la planilla donde se pasan los datos de cada oficina levantada en campo. Se puede abrir en Google Sheets o Excel.
+`fichas-oficinas.csv` es la planilla donde se pasan los datos de cada oficina levantada en campo. Se abre con Excel. La llena Cristian con las notas de todos y se la devuelve a Luis.
 
 - Una fila por oficina. Las 8 conocidas ya vienen cargadas.
 - `CODIGO` une la ficha con el punto de SW Maps. Si una oficina nueva no tiene código, dejarlo vacío: lo asigna Luis.

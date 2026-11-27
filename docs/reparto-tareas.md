@@ -30,7 +30,7 @@ Todos hacen campo. Luis y Karen hacen menos, porque arman la base de datos, la a
 ### Cristian — interior, planta baja
 
 - **Viernes 27:** todas las oficinas de la planta baja. Por cada una: el punto en SW Maps en la puerta, la foto de la puerta y la ficha (lo que se pregunta está en la [tabla de qué anotar](#qué-anotar-de-cada-cosa)). Además, los extintores, botiquines, baños y bebederos de la planta baja, y el **croquis** de la planta baja.
-- **Sábado 28:** pasar las fichas del viernes a la planilla de fichas (`datos/fichas/fichas-oficinas.csv`, la sube Luis a Drive).
+- **Sábado 28:** pasar las fichas del viernes a la planilla `fichas-oficinas.csv` (se abre con Excel; Luis la manda por WhatsApp) y devolvérsela a Luis.
 - **Lunes 30:** volver a las oficinas que estaban cerradas o donde faltó algún dato.
 
 ### Douglas — interior, primer piso y superiores
@@ -87,7 +87,7 @@ Todos hacen campo. Luis y Karen hacen menos, porque arman la base de datos, la a
 | Códigos | En campo solo se escriben los de la lista de oficinas conocidas. El resto queda vacío y Luis lo asigna |
 | Datos de cada día | Cada uno manda su proyecto de SW Maps por WhatsApp (**Share Project**) y no lo borra hasta que Luis confirme |
 | Punto 22 | Ruta tipo Google Maps (desde un inicio hasta un destino), con pgRouting |
-| Fichas | Planilla compartida con los mismos nombres de campo que la plantilla del modelo |
+| Fichas | Se anotan en papel o en las notas del celular. Cristian las pasa a la planilla `fichas-oficinas.csv` (Excel) y se la manda a Luis. No usamos Google Sheets |
 
 ## Cronograma
 
