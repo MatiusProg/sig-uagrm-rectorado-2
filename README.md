@@ -58,6 +58,12 @@ Enunciado completo: [`docs/enunciado-proyecto-sig-2026.pdf`](docs/enunciado-proy
 
 > En clase el ingeniero usa **ActualMap** (Windows) y **AspMap** (web), de VDS Technologies, con Visual Studio y VB.NET. Ver [`docs/notas-clases-y-sorteo.md`](docs/notas-clases-y-sorteo.md).
 
+## Trabajo de campo
+
+- [Reparto de tareas](docs/reparto-tareas.md) ([PDF](docs/Reparto-Tareas-RECT2.pdf)): qué hace cada uno, qué anotar y decisiones.
+- [Guía de campo](docs/guia-campo.md) ([PDF](docs/Guia-Campo-RECT2.pdf)): cómo levantar datos con SW Maps.
+- Plantilla de SW Maps: [`datos/plantilla-swmaps/`](datos/plantilla-swmaps/). Fichas de oficinas: [`datos/fichas/`](datos/fichas/).
+
 ## Arquitectura y estructura
 
 Ver [`docs/arquitectura.md`](docs/arquitectura.md): stack, ambientes dev/prod, CI/CD y estructura de carpetas.

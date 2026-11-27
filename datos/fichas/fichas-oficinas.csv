@@ -1,0 +1,9 @@
+﻿CODIGO,NOMBRE,SIGLA,UNIDAD_SUPERIOR,RESPONSABLE,CARGO,EDIFICIO,PISO,REFERENCIA,HORARIO,TELEFONO,CORREO,SERVICIOS,NOTA,LEVANTADO_POR,FECHA
+CAMPUS-ADM-DAEF,Dirección Administrativa Económica y Financiera,DAEF,Rectorado,,,CAMPUS-ADM,1,,,,,,,,
+CAMPUS-ADM-AF,Activo Fijo,AF,DAEF,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-CC,Compras y Contrataciones,CC,DAEF,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-IEU,Infraestructura y Equipamiento,IEU,DAEF,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-MMU,Mantenimiento y Mejoramiento,MMU,DAEF,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-PRES,Presupuesto,PRES,DAEF,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-AUD,Auditoría Interna,AUD,Rectorado,,,CAMPUS-ADM,,,,,,,,,
+CAMPUS-ADM-DH,Desarrollo Humano,DH,Rectorado,,,CAMPUS-ADM,,,,,,,,,
