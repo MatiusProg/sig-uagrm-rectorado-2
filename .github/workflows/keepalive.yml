@@ -1,5 +1,6 @@
 # Keep-alive: el plan gratis de Supabase pausa un proyecto tras ~7 días sin actividad.
-# Cada 3 días se llama a la función public.ping() de dev y de prod.
+# Todos los días se llama a la función public.ping() de dev y de prod.
+# (Antes era cada 3 días y los dos proyectos se pausaron igual el 25-11-2026.)
 # Usa variables del REPOSITORIO (no de los ambientes), porque el cron corre desde main
 # y el ambiente "dev" solo admite despliegues desde develop.
 # Nota: GitHub desactiva los cron de repos públicos tras 60 días sin commits;
@@ -8,7 +9,7 @@ name: Keep-alive Supabase
 
 on:
   schedule:
-    - cron: '17 12 */3 * *'   # 08:17 hora Bolivia, cada 3 días
+    - cron: '17 12 * * *'   # 08:17 hora Bolivia, todos los días
   workflow_dispatch:
 
 jobs:
